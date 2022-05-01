@@ -34,6 +34,39 @@ function zobrazSeznamReceptu(nalezeneRecepty) {
     })
 }
 
+function zobrazReceptMenu(recept, index) {
+    let receptElement = document.createElement('div')
+    receptElement.className = "recept"
+
+    // obrázek receptu
+    let receptObrazekElement = document.createElement('div')
+    receptObrazekElement.className = "recept-obrazek"
+
+    let receptObrazekSrcElement = document.createElement('img')
+    receptObrazekSrcElement.src = recept.img
+    receptObrazekSrcElement.alt = "Obrázek receptu"
+    receptObrazekElement.appendChild(receptObrazekSrcElement)
+
+    // info receptu
+    let receptInfoElement = document.createElement('div')
+    receptInfoElement.className = "recept-info"
+
+    let receptNadpisElement = document.createElement('h3')
+    receptNadpisElement.textContent = recept.nadpis
+    receptInfoElement.appendChild(receptNadpisElement)
+
+    // spojení pod div class=recept
+    receptElement.appendChild(receptObrazekElement)
+    receptElement.appendChild(receptInfoElement)
+
+    receptElement.addEventListener('click', () => {
+        zobrazReceptDetail(index);
+    });
+
+    return receptElement
+
+}
+
 //2) Doplň hledání
 
 let vyhledavaniElement = document.getElementById('hledat')
@@ -69,7 +102,9 @@ function zobrazReceptDetail(index) {
 
     let receptPopis = document.getElementById('recept-popis')
     receptPopis.textContent = aktualniRecept.popis 
-    
+
 }
+
+
 
 //6) Local Storage
