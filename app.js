@@ -46,3 +46,30 @@ function najdiRecept () {
     let vyhledaneRecepty = recepty.filter(recept => recept.nadpis.toLowerCase().includes(vyhledavaniElement.value))
     zobrazSeznamReceptu(vyhledaneRecepty)
 }
+
+//3) Doplň filtrovanání receptů podle kategorie
+
+//4) Doplň řazení receptů podle hodnocení
+
+//5) Zobraz detail receptu
+
+function zobrazReceptDetail(index) {
+    let aktualniRecept = recepty[index]
+    let receptFoto = document.getElementById('recept-foto')
+    receptFoto.src = aktualniRecept.img
+
+    let receptKategorie = document.getElementById('recept-kategorie')
+    receptKategorie.textContent = aktualniRecept.kategorie
+
+    let receptHodnoceni = document.getElementById('recept-hodnoceni')
+    receptHodnoceni.textContent = aktualniRecept.hodnoceni
+
+    let receptNazev = document.getElementById('recept-nazev')
+    receptNazev.textContent = aktualniRecept.nadpis
+
+    let receptPopis = document.getElementById('recept-popis')
+    receptPopis.textContent = aktualniRecept.popis 
+    
+}
+
+//6) Local Storage
