@@ -19,20 +19,8 @@ recept-hodnoceni, recept-nazev, recept-popis.
 */
 
 
-// 1) Zobraz seznam receptů
+// 1) Zobraz recepty
 
-let nalezeneRecepty = recepty;
-
-zobrazSeznamReceptu(nalezeneRecepty)
-
-function zobrazSeznamReceptu(nalezeneRecepty) {
-    let seznamReceptuElement = document.getElementById('recepty')
-
-    nalezeneRecepty.forEach((recept, index) => {
-        let receptElement = zobrazReceptMenu(recept, index)
-        seznamReceptuElement.appendChild(receptElement)
-    })
-}
 
 function zobrazReceptMenu(recept, index) {
     let receptElement = document.createElement('div')
@@ -78,6 +66,20 @@ function najdiRecept () {
     let vyhledavaniElement = document.getElementById('hledat')
     let vyhledaneRecepty = recepty.filter(recept => recept.nadpis.toLowerCase().includes(vyhledavaniElement.value))
     zobrazSeznamReceptu(vyhledaneRecepty)
+}
+
+
+let nalezeneRecepty = recepty;
+
+zobrazSeznamReceptu(nalezeneRecepty)
+
+function zobrazSeznamReceptu(nalezeneRecepty) {
+    let seznamReceptuElement = document.getElementById('recepty')
+
+    nalezeneRecepty.forEach((recept, index) => {
+        let receptElement = zobrazReceptMenu(recept, index)
+        seznamReceptuElement.appendChild(receptElement)
+    })
 }
 
 //3) Doplň filtrování receptů podle kategorie
