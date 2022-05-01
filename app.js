@@ -21,15 +21,28 @@ recept-hodnoceni, recept-nazev, recept-popis.
 
 // 1) Zobraz seznam receptů
 
-let nalezeneRecepty = recept;
+let nalezeneRecepty = recepty;
 
 zobrazSeznamReceptu(nalezeneRecepty)
 
 function zobrazSeznamReceptu(nalezeneRecepty) {
-    let seznamReceptuElement = document.getElementById('recepty');
+    let seznamReceptuElement = document.getElementById('recepty')
 
     nalezeneRecepty.forEach((recept, index) => {
         let receptElement = zobrazReceptMenu(recept, index)
         seznamReceptuElement.appendChild(receptElement)
     })
+}
+
+//2) Doplň hledání
+
+let vyhledavaniElement = document.getElementById('hledat')
+vyhledavaniElement.addEventListener('keydown', () => {
+    najdiRecept();
+});
+
+function najdiRecept () {
+    let vyhledavaniElement = document.getElementById('hledat')
+    let vyhledaneRecepty = recepty.filter(recept => recept.nadpis.toLowerCase().includes(vyhledavaniElement.value))
+    zobrazSeznamReceptu(vyhledaneRecepty)
 }
