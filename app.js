@@ -80,7 +80,7 @@ function najdiRecept () {
     zobrazSeznamReceptu(vyhledaneRecepty)
 }
 
-//3) Doplň filtrovanání receptů podle kategorie
+//3) Doplň filtrování receptů podle kategorie
 
 //4) Doplň řazení receptů podle hodnocení
 
@@ -105,6 +105,9 @@ function zobrazReceptDetail(index) {
 
 }
 
-
-
 //6) Local Storage
+
+let aktualniReceptStorage = localStorage.getItem('aktualniRecept')
+if (aktualniReceptStorage !== null) {
+    zobrazReceptDetail(Number(aktualniReceptStorage))
+}
