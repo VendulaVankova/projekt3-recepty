@@ -17,3 +17,19 @@ recept-hodnoceni, recept-nazev, recept-popis.
 
 6) Poslední vybraný recept ulož do Local Storage, aby se při novém otevření aplikace načetl.
 */
+
+
+// 1) Zobraz seznam receptů
+
+let nalezeneRecepty = recept;
+
+zobrazSeznamReceptu(nalezeneRecepty)
+
+function zobrazSeznamReceptu(nalezeneRecepty) {
+    let seznamReceptuElement = document.getElementById('recepty');
+
+    nalezeneRecepty.forEach((recept, index) => {
+        let receptElement = zobrazReceptMenu(recept, index)
+        seznamReceptuElement.appendChild(receptElement)
+    })
+}
