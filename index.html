@@ -23,13 +23,13 @@
             <div class="hledani">
                 <label for="hledat">Hledat</label>
                 <div class="hledani-skupina">
-                    <input type="text" id="hledat" placeholder="Název receptu">
-                    <button>Hledat</button>
+                    <input onkeyup="hledat()" type="text" id="hledat" placeholder="Název receptu">
+                    <button onclick="hledat()">Hledat</button>
                 </div>
             </div>
             <div class="kategorie">
                 <label for="kategorie">Kategorie</label>
-                <select id="kategorie">
+                <select onchange="hledat()" id="kategorie">
                     <option value=""></option>
                     <option>Snídaně</option>
                     <option>Hlavní jídlo</option>
@@ -38,16 +38,19 @@
             </div>
             <div class="razeni">
                 <label for="razeni">Seřadit</label>
-                <select id="razeni">
+                <select onchange="hledat()" id="razeni">
                     <option value=""></option>
-                    <option value="1">Od nejlepších</option>
-                    <option value="2">Od nejhorších</option>
+                    <option value="nejlepsi">Od nejlepších</option>
+                    <option value="nejhorsi">Od nejhorších</option>
                 </select>
             </div>
         </header>
 
 
         <div id="recepty" class="recepty">
+            <div id="recepty">
+
+            </div>
            
             <!--<div class="recept">
                 <div class="recept-obrazek">
@@ -61,7 +64,13 @@
         
         </div>
 
-        <div class="recept-detail">
+        <div class="obsah">
+            <div id="recept-detail" class="recept-detail">
+
+            </div>
+
+       
+        <!--<div class="recept-detail">
             <div class="recept-detail-obrazek">
                     <img id="recept-foto" src="sem-doplnit-adresu-obrazku.jpg" alt="">
             </div>
@@ -70,18 +79,22 @@
                 <header>
                     <div class="recept-kategorie">
                         <span class="fas fa-tag"></span> Kategorie:
-                        <span class="hodnota" id="recept-kategorie"><!-- sem se bude doplňovat --></span>
+                        <span class="hodnota" id="recept-kategorie"></span>
                     </div>
                     <div class="recept-hodnoceni">
                         <span class="far fa-star"></span>
-                        <span class="hodnota" id="recept-hodnoceni"><!-- sem se bude doplňovat --></span>
+                        <span class="hodnota" id="recept-hodnoceni"></span>
                     </div>
                 </header>
 
-                <h1 id="recept-nazev"><!-- sem se bude doplňovat --></h1>
+                <h1 id="recept-nazev"></h1>
 
-                <p id="recept-popis"><!-- sem se bude doplňovat --></p>
+                <p id="recept-popis"><</p>
             </div>
+        </div>-->
+        
+    
+
         </div>
 
     </div>
